@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"><!-- -*-web-*- -->
+<html>
+    <head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Stefan Skoglunds hörna i github</title>
+	<link rel="stylesheet" href="format.css"          title="Standard">
+	<link rel="stylesheet" href="format_storstil.css" title="Stor stil">
+    </head>
+
+    <body>
+	<div id="navigeringshuvud">
+	    <div>
+		<a class="knapp" href="index.html" title='Hem'>Rot</a>
+		<a class="knapp" href="cv.html"    title='Min CV'>CV</a>
+	    </div>
+	</div>
+
+	<div id="main">
+	    <div id="Signaltekniker">
+		<h3>Signaltekniker vid järnvägen</h3>
+		<p>
+		    Mitt betyg från signalteknikerkursen i Falköping finns
+		    <a href="Signalteknikerkursen/betyg_20150609222916638.pdf">här (betyg_20150609222916638)</a>
+		</p>
+	    </div>
+
+	    <div id="LinkedIn_kurser">
+		<h3>LinkedIn kurser</h3>
+		<p>
+		    Certifikat från genomgångna LinkedIn(Lynda):kurser
+		    <ul>
+			<li><a href="Linkedinkurser/CertificateOfCompletion_DevOps Foundations.pdf">Certificate of Completion, DevOps Foundations</a></li>
+			<li><a href="Linkedinkurser/CertificateOfCompletion_Writing with Proper Punctuation.pdf">Writing with Proper Punctuation, English</a></li>
+		    </ul>
+	    </div>
+
+	    <div id="PKI_funktion">
+		<h3>PKI</h3>
+		<p>
+		    PKI handlar om publika nycklar och deras motsvarande privata dito
+		    och certifikat som signeras av
+		</p>
+		<p>
+		    en yttre entitet. Den här entiteten (certifikatutfärdaren)
+		    accepteras av flera organisationer. Certifikatutfärdarens certifikats
+		    privata nyckel måste skyddas av utfärdaren.
+		</p>
+		<p>
+		    Det signerade certifikatet är värdelöst om man inte har tillgång till
+		    den privata kodnyckeln
+		</p>
+
+		<h3>min PKI:struktur</h3>
+		<p>
+		    Jag har arbetat med att lägga upp en egen struktur för
+		    en 3-lagers certifkatutfärdningsstruktur.
+		</p>
+		<p>
+		    Därför finns en rotcertifikatet <a href="SkaraborgfakirRotkontrollant.crt">här(SkaraborgfakirRotkontrollant.crt)</a> och den
+		    tillhörande annulleringslistan <a href="SkaraborgsfakirRootCA.crl.der">här</a>
+		</p>
+		<p>
+		    Hantering av signering av certifikat ska hanteras halv-automatiskt
+		    av kod i CFengine.
+		</p>
+	    </div>
+
+	    <div id="kunskaper_sektion">
+		<h3>Kunskaper</h3>
+		<ul>
+		    <li>CFEngine</li>
+		</ul>
+	    </div>
+	</div>
+	<div id="sidfot">
+	    <div id="nedre_informationsruta">
+		<div>
+		    <address>
+			Stefan Niskanen Skoglund
+			Högalidsgatan 36
+			521 61 Stenstorp
+		    </address>
+		</div>
+
+		<p>
+		    <a href="http://validator.w3.org/check?uri=http://skaraborgfakir.github.io/index.html"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Strict" height="31" width="88"></a>
+		</p>
+	    </div>
+	</div>
+    </body>
+</html>
