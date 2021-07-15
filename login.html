@@ -2,15 +2,9 @@
 <html lang="sv">
     <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Inlämning i frontend:utveckling</title>
     </head>
-
     <body>
-	<div id="navigeringshuvud">
-	    <div>
-		<a class="knapp" href="index.html" title='Hem'>Rot</a>
-		<a class="knapp" href="cv.html"    title='Min CV'>CV</a>
-	    </div>
-	</div>
 	<!--
 	     1 utf8-kodning
 	     2 title i head
@@ -21,8 +15,37 @@
 	     4 behållare som innehåller:
 	   --- en förklarande text 'Login'
 	-->
+	<header>
+	    <h1>Logo</h1>
+	    <ul>
+		<li><a href="https://www.agj.net">En museibana</a></li>
+		<li><a href="https://www.transportstyrelsen.se/">Transportstyrelsen</a></li>
+		<li><a href="https://dn.se/">Dagens Nyheter</a></li>
+	    </ul>
+	</header>
 
 	<div id="main">
+	    <div>
+		<a href="index.html">Index</a>
+	    </div>
+	    <div>
+		<!--  <h2>Inloggning för autentiserade användare</h2> -->
+		<h2>Login</h2>
+		<form action="/action_page.php" method="post">
+		    <label autocomplete="off" for="fname">Användarenamn</label><input autofocus="autofocus" type="text" id="username" name="username">
+		    <label for="lname">Lösenord</label><input type="password" id="passwd" name="passwd">
+		    <input type="reset" value="Rensa">
+		    <input type="submit" formmethod="POST" formaction="http://www.fakirenstenstorp.st" value="Logga in">
+		</form>
+	    </div>
 	</div>
+	<footer>
+	    <div>
+	    &#169 Stefan Niskanen Skoglund <a href="mailto:stefan.skoglund@agj.net">stefan.skoglund@agj.net</a>
+	    </div>
+	    <div>
+		&#x260E 0500-xxxxxx
+	    </div>
+	</footer>
     </body>
 </html>
