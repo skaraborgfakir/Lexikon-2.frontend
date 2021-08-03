@@ -2,6 +2,7 @@
 <html lang="sv">
     <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="format.css"/>
 	<title>Inlämning i frontend:utveckling</title>
     </head>
     <body>
@@ -26,22 +27,22 @@
 	     ..fotelement med namn och copyright-märke (koden för ringat-C)
 	-->
 	<header>
-	    <h1>Logo</h1>
-	    <ul>
+	    <h1 id="logo">Logo</h1>
+	    <ul id="navbar">
 		<li><a href="test2.html">Test 2</a></li>
 		<li><a href="test3.html">Test 3</a></li>
 		<li><a href="test4.html">Test 4</a></li>
 	    </ul>
 	</header>
 
-	<a href="login.html">Login</a>
+	<a id="loginknapp" href="login.html">Login</a>
 
 	<main>
-	    <section>
+	    <section id="artiklar">
 		<h2>Ingress</h2>
 		<p>Några artiklar om olika saker</p>
 
-		<article>	    <!-- innehåll som kan stå för sig självt -->
+		<article id="artikel1">	    <!-- innehåll som kan stå för sig självt -->
 		    <h3>Räknesnurra</h3>
 		    <p>
 			En sk. räknesnurra tillverkad av firman Original-Odhner.
@@ -58,10 +59,10 @@
 			    <li>Lacken är fläckvis skada - men jag är inte intresserad av att få den i nyskick. Slitaget ska synas</li>
 			</ol>
 		    </div>
-		    <img id="stor_bild" src="IMG_20210714_182017.jpg" alt="En vevräknare på en fönsterbräda" style="width:500px;">
+		    <img class="stor_bild" id="original_odhner" src="IMG_20210714_182017.jpg" alt="En räknesnurra stående på en fönsterbräda">
 		</article>
 
-		<article>	    <!-- innehåll som kan stå för sig självt -->
+		<article id="artikel2">	    <!-- innehåll som kan stå för sig självt -->
 		    <h3>IBM 360</h3>
 		    <p>
 			Ett exempel på projekt som riskerar en organisations framtid.
