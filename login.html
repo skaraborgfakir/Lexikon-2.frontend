@@ -2,7 +2,7 @@
 <html lang="sv">
     <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<link rel="stylesheet" href="format.css"/>
+	<link rel="stylesheet" href="format_login.css"/>
 	<title>Inlämning i frontend:utveckling</title>
     </head>
     <body>
@@ -16,30 +16,41 @@
 	     4 behållare som innehåller:
 	   --- en förklarande text 'Login'
 	-->
-	<header>
-	    <h1 id="logo">Logo</h1>
-	    <ul id="navbar">
-		<li><a href="test2.html">Test 2</a></li>
-		<li><a href="test3.html">Test 3</a></li>
-		<li><a href="test4.html">Test 4</a></li>
-	    </ul>
+	<header id="sidhuvud" class="login sidhuvud">
+	    <div class="login logo">
+		<h1 id="logo" class="login">Logo</h1>
+	    </div>
+	    <div class="sidhuvud_mitt login">
+		<nav class="navigeringsrad login">
+		    <ul>
+			<li><a class="login" href="test2.html">Test 2</a></li>
+			<li><a class="login" href="test3.html">Test 3</a></li>
+			<li><a class="login" href="test4.html">Test 4</a></li>
+		    </ul>
+		</nav>
+		<div class="konto login">
+		    <a id="loginknapp" class="login" href="login.html">Login
+		    </a>
+		</div>
+	    </div>
 	</header>
 
-	<div id="main">
-	    <div>
-		<a href="index.html">Index</a>
-	    </div>
+	<main class="login">
 	    <div>
 		<!--  <h2>Inloggning för autentiserade användare</h2> -->
-		<h2>Login</h2>
-		<form action="/action_page.php" method="post">
-		    <label autocomplete="off" for="fname">Användarenamn</label><input autofocus="autofocus" type="text" id="username" name="username">
-		    <label for="lname">Lösenord</label><input type="password" id="passwd" name="passwd">
-		    <input type="reset" value="Rensa">
-		    <input type="submit" formmethod="POST" formaction="http://www.fakirenstenstorp.st" value="Logga in">
-		</form>
+		<div>
+		    <h2 class="login">Login</h2>
+		</div>
+		<div>
+		    <form action="/action_page.php" method="post">
+			<label autocomplete="off" for="fname">Användarenamn</label><input autofocus="autofocus" type="text" id="username" name="username">
+			<label for="lname">Lösenord</label><input type="password" id="passwd" name="passwd">
+			<input type="reset" value="Rensa">
+			<input type="submit" formmethod="POST" formaction="http://www.fakirenstenstorp.st" value="Logga in">
+		    </form>
+		</div>
 	    </div>
-	</div>
+	</main>
 	<footer>
 	    <div>
 		&#169 Stefan Niskanen Skoglund <a href="mailto:stefan.skoglund@agj.net">stefan.skoglund@agj.net</a>

@@ -26,63 +26,73 @@
 	     6
 	     ..fotelement med namn och copyright-märke (koden för ringat-C)
 	-->
-	<header>
-	    <h1 id="logo">Logo</h1>
-	    <ul id="navbar">
-		<li><a href="test2.html">Test 2</a></li>
-		<li><a href="test3.html">Test 3</a></li>
-		<li><a href="test4.html">Test 4</a></li>
-	    </ul>
+	<header id="sidhuvud" class="sidhuvud">
+	    <div class="Logo">
+		<h1 id="logo">Logo</h1>
+	    </div>
+	    <div class="sidhuvud_mitt">
+		<nav class="navigeringsrad">
+		    <ul>
+			<li><a href="test2.html">Test 2</a></li>
+			<li><a href="test3.html">Test 3</a></li>
+			<li><a href="test4.html">Test 4</a></li>
+		    </ul>
+		</nav>
+		<div class="konto">
+		    <a id="loginknapp" href="login.html">Login
+		    </a>
+		</div>
+	    </div>
 	</header>
 
-	<a id="loginknapp" href="login.html">Login</a>
-
 	<main>
-	    <section id="artiklar">
+	    <section>
 		<h2>Ingress</h2>
 		<p>Några artiklar om olika saker</p>
 
-		<article id="artikel1">	    <!-- innehåll som kan stå för sig självt -->
-		    <h3>Räknesnurra</h3>
-		    <p>
-			En sk. räknesnurra tillverkad av firman Original-Odhner.
-		    </p>
-		    <p>
-			Skaffade den för att ha som övningsobjekt när jag ska lära mig att ta isär en sådan
-			för att smörja upp och få den i full funktion.
-		    </p>
-		    <div>
-			Fel som denna har:
-			<ol>
-			    <li>Registret rör sig inte som det ska vilket gör multiplikation och division lite oberäkneligt. Smörjfilmen inuti den är för klibbig.</li>
-			    <li>Den är lite smutsig</li>
-			    <li>Lacken är fläckvis skada - men jag är inte intresserad av att få den i nyskick. Slitaget ska synas</li>
-			</ol>
-		    </div>
-		    <img id="original_odhner" class="stor_bild" src="original_odhner.jpg" alt="En räknesnurra stående på en fönsterbräda">
-		</article>
+		<div id="artiklar">
+		    <article id="artikel1">	    <!-- innehåll som kan stå för sig självt -->
+			<h3>Räknesnurra</h3>
+			<p>
+			    En sk. räknesnurra tillverkad av firman Original-Odhner.
+			</p>
+			<p>
+			    Skaffade den för att ha som övningsobjekt när jag ska lära mig att ta isär en sådan
+			    för att smörja upp och få den i full funktion.
+			</p>
+			<div>
+			    Fel som denna har:
+			    <ol>
+				<li>Registret rör sig inte som det ska vilket gör multiplikation och division lite oberäkneligt. Smörjfilmen inuti den är för klibbig.</li>
+				<li>Den är lite smutsig</li>
+				<li>Lacken är fläckvis skada - men jag är inte intresserad av att få den i nyskick. Slitaget ska synas</li>
+			    </ol>
+			</div>
+			<img id="original_odhner" class="stor_bild" src="./bilder/original_odhner.jpg" alt="En räknesnurra stående på en fönsterbräda">
+		    </article>
 
-		<article id="artikel2">	    <!-- innehåll som kan stå för sig självt -->
-		    <h3>IBM 360</h3>
-		    <p>
-			Ett exempel på projekt som riskerar en organisations framtid.
-			Hade någon annan än Thomas Watson Sr:s son kunnat fått med sig organisationen
-			och aktieägarna på ett projekt vars kostnader var högre än en hel årsförsäljning
-			för IBM ?
-		    </p>
-		    <p>
-			Dessutom var rivalitete mellan IBM:s två tillverkningsgrenar, gruppen
-			för mindre system i Endicott (IBM 1401) och Poughkeepsie som konstruerade och tillverkade
-			exv 7000 seriens stordatorer (inkluvis superdatorn 7094 och dess föregångare 709)
-		    </p>
-		    <p>
-			IBM:s ledning och de två grupperna tvingades tidigt 1960 att inse att 7000 seriens
-			efterföljare var en återvändsgränd därför att man inte i längden skulle orka ha
-			de olika med varandra inkompatible produktlinjerna.
-		    </p>
-		</article>
+		    <article id="artikel2">	    <!-- innehåll som kan stå för sig självt -->
+			<h3>IBM 360</h3>
+			<p>
+			    Ett exempel på projekt som riskerar en organisations framtid.
+			    Hade någon annan än Thomas Watson Sr:s son kunnat fått med sig organisationen
+			    och aktieägarna på ett projekt vars kostnader var högre än en hel årsförsäljning
+			    för IBM ?
+			</p>
+			<p>
+			    Dessutom var rivaliteten mellan IBM:s två tillverkningsgrenar, gruppen
+			    för mindre system i Endicott (IBM 1401) och Poughkeepsie som konstruerade och tillverkade
+			    exv 7000 seriens stordatorer (inkluvis superdatorn 7094 och dess föregångare 709)
+			</p>
+			<p>
+			    IBM:s ledning och de två grupperna tvingades tidigt 1960 att inse att 7000 seriens
+			    efterföljare var en återvändsgränd därför att man inte i längden skulle orka ha
+			    de olika med varandra inkompatible produktlinjerna.
+			</p>
+		    </article>
+		</div>
 	    </section>
-	    <article>	    <!-- innehåll som kan stå för sig självt -->
+	    <aside>
 		<h3>Några städer i några länder</h3>
 		<ul>
 		    <li>Danmark
@@ -107,14 +117,18 @@
 			</ol>
 		    </li>
 		</ul>
-	    </article>
+	    </aside>
 	</main>
+
+
 	<footer>
 	    <div>
-		&copy; Stefan Niskanen Skoglund <a href="mailto:stefan.skoglund@agj.net">stefan.skoglund@agj.net</a>
-	    </div>
-	    <div>
-		&#x260E; 0500-xxxxxx
+		<p class="colophon">
+		    &copy; Stefan Niskanen Skoglund <a href="mailto:stefan.skoglund@agj.net">stefan.skoglund@agj.net</a>
+		</p>
+		<p class="colophon">
+		    &#x260E; 0500-xxxxxx
+		</p>
 	    </div>
 	</footer>
     </body>
