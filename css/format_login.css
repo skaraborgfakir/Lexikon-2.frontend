@@ -41,7 +41,7 @@ main {
     flex-shrink : 1;
 }
 
-.login..sidhuvud_mitt {
+.login.sidhuvud_mitt {
     flex-basis: 0%;
     flex-grow: 1;
     flex-shrink : 1;
