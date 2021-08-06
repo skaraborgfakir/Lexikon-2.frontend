@@ -75,63 +75,48 @@ section {
 }
 
 #artiklar article:nth-of-type(1) p:nth-of-type(2) {
-    color: blue;
+    color:        blue;
+    font-weight:  bold;
 }
 
-/* header h1 {
-    position:         absolute;
-    top:              10px;
-    background-color: #666600;
-    border:           1px solid #000000;
-    width:            10%;
+h2.login {
+    text-transform: uppercase;
 }
 
-header ul {
-    position:         absolute;
-    top:              20px;
-    left:             400px;
+form {
+    border-style:  solid;
+    border-width:  2px;
+    border-radius: 6px;
+    padding:       10px;
+    border-color:  black;
 }
 
-header ul li {
-    display:         inline-block;
-    list-style-type: none;
+form > label {
+    padding:       10px;
 }
 
-#loginknapp {
-    position:         absolute;
-    top:              40px;
-    left:             800px;
+form > input {
+    padding:          10px;
+    border-color:     black;
 }
 
-#logo {
-    position:         relative;
-    top:              10px;
-    background-color: #666600;
-    border:           1px solid #000000;
-    width:            30%;
+form > input#reset {
+    border-style:     solid;
+    border-width:     2px;
+    border-radius:    6px;
+    padding:          10px;
+    border-color:     black;
+    background-color: #03cafc;
 }
 
-#navbar {
-    position:         relative;
-    top:              10px;
+form > input#submit {
+    border-style:     solid;
+    border-width:     2px;
+    border-radius:    6px;
+    padding:          10px;
+    border-color:     black;
+    background-color: #fcbe03;
 }
-
-#navbar li {
-    display:         inline-block;
-    list-style-type: none;
-}
-
-article {
-    float: left;
-}
-
-#artiklar {
-}
-
-#artiklar article {
-    width:40%;
-}
-*/
 
 #original_odhner {
     width: 300px;
