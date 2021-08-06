@@ -10,26 +10,72 @@ html {
     padding-bottom: 0px;
     padding-right:  0px;
     padding-top:    0px;
-
-    width:        1024px;
-    margin-left:  auto;
-    margin-right: auto;
+    width:          1024px;
+    margin:         auto;
+    --gap:          6rem;
+    --maxwidth:     1024px;
 }
 
 body {
     background-color: #fdfdfd;
 }
 
-article aside details figure header nav {
+main {
     display:          flex;
 }
 
 .sidhuvud {
+    display:             flex;
+    align-items:         center;
     position:            relative;
     z-index:             2;
     border-bottom-color: rgb(100,100,100);
     border-bottom-style: solid;
     border-bottom-width: 2px;
+}
+.sidhuvud_mitt {
+    flex-basis: 0%;
+    flex-grow: 1;
+    flex-shrink : 1;
+}
+
+.navigeringsrad {
+    display: block;
+}
+
+.navigeringsrad > ul {
+    display: flex;
+}
+
+.navigeringsrad > ul > li {
+    padding: 10px;
+    list-style-type: none;
+}
+
+.konto {
+    position: fixed;
+    z-index: 15;
+    top: 0.10rem;
+    right: var(--gap);
+}
+
+main {
+    display:        flex;
+    flex-direction: row;
+}
+
+section {
+    display:        flex;
+    flex-direction: column;
+}
+
+#artiklar {
+    display:        flex;
+    flex-direction: row;
+}
+
+#artiklar article:nth-of-type(1) p:nth-of-type(2) {
+    color: blue;
 }
 
 /* header h1 {
@@ -88,5 +134,5 @@ article {
 */
 
 #original_odhner {
-    width: 250px;
+    width: 300px;
 }
