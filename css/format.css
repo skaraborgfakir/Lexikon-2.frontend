@@ -79,6 +79,19 @@ section {
     font-weight:  bold;
 }
 
+aside > ul > li:nth-child(odd) {
+    color: #00898c;
+}
+/* aside > ul > li:nth-child(odd) > ol { */
+/*     color: black; */
+/* } */
+aside > ul > li:nth-child(even) {
+    color: #87898c;
+}
+/* aside > ul > li:nth-child(even) > ol { */
+/*     color: black; */
+/* } */
+
 .login.huvud > h2 {
     text-transform: uppercase;
 }
