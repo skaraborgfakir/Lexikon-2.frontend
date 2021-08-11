@@ -1,8 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 100%;
 }
 
 body {
     color: #808080;
-    background-color: #101010;
+    background-color: #5da449;
+    display: flex;
+    min-width: 800px;
+}
+
+#vy {
+    padding: 2em;
+}
+
+#spelplan {
+    background-color: 101010;
+}
+
+#mur {
+    display: grid;
+}
+
+#bakgrund {
+    display: grid;
 }
