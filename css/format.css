@@ -34,8 +34,8 @@ main {
     border-bottom-width: 2px;
 }
 .sidhuvud_mitt {
-    flex-basis: 0%;
-    flex-grow: 1;
+    flex-basis:   0%;
+    flex-grow:    1;
     flex-shrink : 1;
 }
 
@@ -53,10 +53,6 @@ main {
 }
 
 .konto {
-    position: fixed;
-    z-index: 15;
-    top: 0.10rem;
-    right: var(--gap);
 }
 
 main {
@@ -74,12 +70,19 @@ section {
     flex-direction: row;
 }
 
+#artiklar article {
+    padding-right: 10px;
+}
+
 #artiklar article:nth-of-type(1) p:nth-of-type(2) {
     color:        blue;
     font-weight:  bold;
 }
 
-h2.login {
+.login.huvud > h2 {
+    text-transform: uppercase;
+}
+.login.huvud > p {
     text-transform: uppercase;
 }
 
@@ -119,5 +122,5 @@ form > input#submit {
 }
 
 #original_odhner {
-    width: 300px;
+    width: 350px;
 }
