@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 00:38:16 stefan>
+/* Time-stamp: <2021-08-17 00:38:54 stefan>
  */
 
 var spelplankontext;
@@ -18,8 +18,8 @@ var riktning;
 
 function init() {
     let spelplan=document.createElement( "canvas");
-    spelplan.width=tileMap01.width*20;    // spelytans storlek i pixel
-    spelplan.height=tileMap01.height*20;  // spelytans storlek i pixel
+    spelplan.width=tileMap01.width*40;    // spelytans storlek i pixel
+    spelplan.height=tileMap01.height*40;  // spelytans storlek i pixel
 
     if (spelplan.getContext) {
 	spelplankontext = spelplan.getContext("2d");
