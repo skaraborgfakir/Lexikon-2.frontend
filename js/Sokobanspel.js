@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 00:21:12 stefan>
+/* Time-stamp: <2021-08-17 00:25:02 stefan>
  */
 
 var spelplankontext;
@@ -101,6 +101,19 @@ function paint() {
 				   20*X, 20*Y, 20, 20);
 	break;
     }
+
+    for (var x=0; x < tileMap01.width ; x++) {
+	for (var y=0; y < tileMap01.height ; y++) {
+	    switch( tileMap01.mapGrid[y][x][0]) {
+	    case 'W':
+		spelplankontext.drawImage( vägg,
+					   0,   0, 20, 20,
+					   20*x, 20*y, 20, 20);
+		break;
+	    }
+	}
+    }
+
 }
 
 function tangenttryck(event) {
