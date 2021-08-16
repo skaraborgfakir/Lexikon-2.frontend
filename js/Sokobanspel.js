@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 00:58:18 stefan>
+/* Time-stamp: <2021-08-17 01:00:36 stefan>
  */
 
 var spelplankontext;
@@ -132,9 +132,9 @@ function paint() {
 		    break;
 		case ' ':
 		    if ( inutiLabyrint) {
-			spelplankontext.drawImage( golv,
-						   0,       0, 40, 40,
-						   40*x, 40*y, 40, 40);
+			// spelplankontext.drawImage( golv,
+			//			   0,       0, 40, 40,
+			//			   40*x, 40*y, 40, 40);
 		    }
 		}
 	    }
