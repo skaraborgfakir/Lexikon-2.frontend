@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 00:42:15 stefan>
+/* Time-stamp: <2021-08-17 00:45:02 stefan>
  */
 
 var spelplankontext;
@@ -110,6 +110,11 @@ function paint() {
 		    spelplankontext.drawImage( vägg,
 					       23*40, 0,   40, 40,
 					       40*x, 40*y, 40, 40);
+		    break;
+		case 'B':
+		    spelplankontext.drawImage( lådor,
+					       0,           0, 40, 40,
+					       40*x+5, 40*y+5, 35, 35);
 		    break;
 		}
 	    }
