@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-16 20:18:20 stefan>
+/* Time-stamp: <2021-08-17 00:13:38 stefan>
  */
 
 var spelplankontext;
@@ -65,10 +65,17 @@ function init() {
 	}
     }
 
-    console.log("X="+ X + ",Y="+ Y);
+    setInterval(paint,20);
+
+    // console.log("X="+ X + ",Y="+ Y);
 }
 
+
+
 document.addEventListener( "DOMContentLoaded", init, false);
+
+function paint() {
+}
 
 function tangenttryck(event) {
     var  flytta=false;
