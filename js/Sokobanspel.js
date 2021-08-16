@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 17:25:22 stefan>
+// Time-stamp: <2021-08-16 17:28:47 stefan>
 //
 
 "use strict"
@@ -40,11 +40,11 @@ function init() {
 
 document.addEventListener( "DOMContentLoaded", init(e), false);
 
-function tangenttryck(e) {
+function tangenttryck(event) {
     console.log("keypress");
 
-    if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+    if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(event.code) > -1) {
 	console.log("preventDefault");
-	e.preventDefault();
+	event.preventDefault();
     }
 }
