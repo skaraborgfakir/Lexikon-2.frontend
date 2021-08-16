@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 17:51:58 stefan>
+// Time-stamp: <2021-08-16 17:52:43 stefan>
 //
 
 "use strict"
@@ -61,22 +61,22 @@ function tangenttryck(event) {
 
     spelplan.clearRect( x, y, 20, 20);
     switch(riktning) {
-	'U':
+    case 'U':
 	spelplan.drawImage( nyckelpiganUppåt,
 			    0,   0, 20, 20,
 			    30, 30, 20, 20);
 	break;
-	'H':
+    case 'H':
 	spelplan.drawImage( nyckelpiganÅtHöger,
 			    0,   0, 20, 20,
 			    30, 30, 20, 20);
 	break;
-	'N':
+    case 'N':
 	spelplan.drawImage( nyckelpiganNedåt,
 			    0,   0, 20, 20,
 			    30, 30, 20, 20);
 	break;
-	'V':
+    case 'V':
 	spelplan.drawImage( nyckelpiganÅtVänster,
 			    0,   0, 20, 20,
 			    30, 30, 20, 20);
