@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 18:10:00 stefan>
+// Time-stamp: <2021-08-16 18:11:06 stefan>
 //
 
 "use strict"
@@ -6,8 +6,8 @@
 var spelplankontext;
 var bredd;
 var höjd;
-var X; var startX=30;
-var Y; var startY=30;
+var X;
+var Y;
 
 var nyckelpiganÅtVänster, nyckelpiganÅtHöger, nyckelpiganUppåt, nyckelpiganNedåt;
 var riktning;
@@ -41,7 +41,7 @@ function init() {
     Y = 30;
     spelplankontext.drawImage( nyckelpiganUppåt,
 			       0,       0, 20, 20,
-			       20*x, 20*y, 20, 20);
+			       20*X, 20*Y, 20, 20);
 }
 
 document.addEventListener( "DOMContentLoaded", init, false);
@@ -72,22 +72,22 @@ function tangenttryck(event) {
     case 'U':
 	spelplankontext.drawImage( nyckelpiganUppåt,
 				   0,   0, 20, 20,
-				   30, 30, 20, 20);
+				   20*X, 20*Y, 20, 20);
 	break;
     case 'H':
 	spelplankontext.drawImage( nyckelpiganÅtHöger,
 				   0,   0, 20, 20,
-				   30, 30, 20, 20);
+				   20*X, 20*Y, 20, 20);
 	break;
     case 'N':
 	spelplankontext.drawImage( nyckelpiganNedåt,
 				   0,   0, 20, 20,
-				   30, 30, 20, 20);
+				   20*X, 20*Y, 20, 20);
 	break;
     case 'V':
 	spelplankontext.drawImage( nyckelpiganÅtVänster,
 				   0,   0, 20, 20,
-				   30, 30, 20, 20);
+				   20*X, 20*Y, 20, 20);
 	break;
     }
 }
