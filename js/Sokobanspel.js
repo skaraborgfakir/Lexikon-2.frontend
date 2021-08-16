@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 00:41:12 stefan>
+/* Time-stamp: <2021-08-17 00:42:15 stefan>
  */
 
 var spelplankontext;
@@ -78,8 +78,6 @@ document.addEventListener( "DOMContentLoaded", init, false);
 function paint() {
     spelplankontext.drawImage( bakgrund,
 			       0, 0, tileMap01.width*40, tileMap01.height*40);
-
-    console.log("paint");
 
     switch(riktning) {
     case 'U':
