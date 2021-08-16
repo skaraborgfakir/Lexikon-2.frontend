@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 00:32:26 stefan>
+/* Time-stamp: <2021-08-17 00:36:53 stefan>
  */
 
 var spelplankontext;
@@ -11,7 +11,7 @@ var Y;
 var nyckelpiganÅtVänster, nyckelpiganÅtHöger, nyckelpiganUppåt, nyckelpiganNedåt;
 var lådor;
 var bakgrund;
-var vägg;
+var vägg; var väggInläst;
 
 //
 var riktning;
@@ -45,7 +45,10 @@ function init() {
     bakgrund="png/background2.png";
 
     vägg=document.createElement("img");
-    vägg="png/wall_wood1.png";
+    vägg.addEventListener('load', (event) => {
+	väggInläst=true;
+    });
+    vägg.src="png/wall_wood1.png";
 
     document.addEventListener( "keydown", tangenttryck, false);
 
@@ -102,18 +105,19 @@ function paint() {
 	break;
     }
 
-    for (var x=0; x < tileMap01.width ; x++) {
-	for (var y=0; y < tileMap01.height ; y++) {
-	    switch( tileMap01.mapGrid[y][x][0]) {
-	    case 'W':
-		spelplankontext.drawImage( vägg,
-					   23*40, 0, 40, 40,
-					   20*x, 20*y, 40, 40);
-		break;
+    if (väggInläst) {
+	for (var x=0; x < tileMap01.width ; x++) {
+	    for (var y=0; y < tileMap01.height ; y++) {
+		switch( tileMap01.mapGrid[y][x][0]) {
+		case 'W':
+		    spelplankontext.drawImage( vägg,
+					       23*40, 0, 40, 40,
+					       20*x, 20*y, 40, 40);
+		    break;
+		}
 	    }
 	}
     }
-
 }
 
 function tangenttryck(event) {
