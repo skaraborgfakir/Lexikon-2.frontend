@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 17:56:04 stefan>
+// Time-stamp: <2021-08-16 18:10:00 stefan>
 //
 
 "use strict"
@@ -6,9 +6,11 @@
 var spelplankontext;
 var bredd;
 var höjd;
+var X; var startX=30;
+var Y; var startY=30;
 
 var nyckelpiganÅtVänster, nyckelpiganÅtHöger, nyckelpiganUppåt, nyckelpiganNedåt;
-var riktning = 'U';
+var riktning;
 
 function init() {
     let spelplan=document.createElement( "canvas");
@@ -33,6 +35,13 @@ function init() {
     nyckelpiganÅtVänster.src="png/hraci4.png";
 
     document.addEventListener( "keydown", tangenttryck, false);
+
+    riktning = 'U';
+    X = 30;
+    Y = 30;
+    spelplankontext.drawImage( nyckelpiganUppåt,
+			       0,       0, 20, 20,
+			       20*x, 20*y, 20, 20);
 }
 
 document.addEventListener( "DOMContentLoaded", init, false);
@@ -40,21 +49,20 @@ document.addEventListener( "DOMContentLoaded", init, false);
 function tangenttryck(event) {
     console.log("keypress");
 
-    if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(event.code) > -1) {
-	console.log("preventDefault");
-	event.preventDefault();
-    }
-
     if(["ArrowUp"].indexOf(event.code) > -1) {
+	event.preventDefault();
 	riktning = 'U';
 	console.log("2 uppåt");
     } else if(["ArrowRight"].indexOf(event.code) > -1) {
+	event.preventDefault();
 	riktning = 'H';
 	console.log("2 höger");
     } else if(["ArrowDown"].indexOf(event.code) > -1) {
+	event.preventDefault();
 	riktning = 'N';
 	console.log("2 nedåt");
     } else if(["ArrowLeft"].indexOf(event.code) > -1) {
+	event.preventDefault();
 	riktning = 'V';
 	console.log("2 vänster");
     }
