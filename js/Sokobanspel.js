@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 00:17:04 stefan>
+/* Time-stamp: <2021-08-17 00:21:12 stefan>
  */
 
 var spelplankontext;
@@ -63,6 +63,7 @@ function init() {
     }
 
     setInterval(paint,20);
+    riktning='U';
 
     // console.log("X="+ X + ",Y="+ Y);
 }
@@ -77,6 +78,29 @@ function paint() {
     //			       0, 0, tileMap01.width*20, tileMap01.height*20);
 
     console.log("paint");
+
+    switch(riktning) {
+    case 'U':
+	spelplankontext.drawImage( nyckelpiganUppåt,
+				   0,   0, 20, 20,
+				   20*X, 20*Y, 20, 20);
+	break;
+    case 'H':
+	spelplankontext.drawImage( nyckelpiganÅtHöger,
+				   0,   0, 20, 20,
+				   20*X, 20*Y, 20, 20);
+	break;
+    case 'N':
+	spelplankontext.drawImage( nyckelpiganNedåt,
+				   0,   0, 20, 20,
+				   20*X, 20*Y, 20, 20);
+	break;
+    case 'V':
+	spelplankontext.drawImage( nyckelpiganÅtVänster,
+				   0,   0, 20, 20,
+				   20*X, 20*Y, 20, 20);
+	break;
+    }
 }
 
 function tangenttryck(event) {
@@ -107,36 +131,24 @@ function tangenttryck(event) {
 	    if (Y > 0) {
 		spelplankontext.clearRect( 20*X, 20*Y, 20, 20);
 		Y=Y-1;
-		spelplankontext.drawImage( nyckelpiganUppåt,
-					   0,   0, 20, 20,
-					   20*X, 20*Y, 20, 20);
 	    }
 	    break;
 	case 'H':
 	    if (X < tileMap01.width - 1) {
 		spelplankontext.clearRect( 20*X, 20*Y, 20, 20);
 		X=X+1;
-		spelplankontext.drawImage( nyckelpiganÅtHöger,
-					   0,   0, 20, 20,
-					   20*X, 20*Y, 20, 20);
 	    }
 	    break;
 	case 'N':
 	    if ( Y < tileMap01.height-1) {
 		spelplankontext.clearRect( 20*X, 20*Y, 20, 20);
 		Y=Y+1;
-		spelplankontext.drawImage( nyckelpiganNedåt,
-					   0,   0, 20, 20,
-					   20*X, 20*Y, 20, 20);
 	    }
 	    break;
 	case 'V':
 	    if (X > 0) {
 		spelplankontext.clearRect( 20*X, 20*Y, 20, 20);
 		X=X-1;
-		spelplankontext.drawImage( nyckelpiganÅtVänster,
-					   0,   0, 20, 20,
-					   20*X, 20*Y, 20, 20);
 	    }
 	    break;
 	}
