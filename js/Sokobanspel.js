@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 00:36:53 stefan>
+/* Time-stamp: <2021-08-17 00:38:16 stefan>
  */
 
 var spelplankontext;
@@ -111,8 +111,8 @@ function paint() {
 		switch( tileMap01.mapGrid[y][x][0]) {
 		case 'W':
 		    spelplankontext.drawImage( vägg,
-					       23*40, 0, 40, 40,
-					       20*x, 20*y, 40, 40);
+					       23*40, 0,   40, 40,
+					       40*x, 40*y, 40, 40);
 		    break;
 		}
 	    }
