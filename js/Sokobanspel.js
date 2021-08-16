@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 17:42:08 stefan>
+// Time-stamp: <2021-08-16 17:45:03 stefan>
 //
 
 "use strict"
@@ -8,32 +8,33 @@ var bredd;
 var höjd;
 
 var nyckelpiganÅtVänster, nyckelpiganÅtHöger, nyckelpiganUppåt, nyckelpiganNedåt;
-var riktning = 'H';
+var nyckelpigan[4];
+var riktning = 0;
 
 function init() {
     let spelplan=document.createElement( "canvas");
     spelplan.width=800;
     spelplan.height=500;
 
-     if (spelplan.getContext) {
-	 spelplankontext = spelplan.getContext("2d");
-	 spelplankontext.fileStyle = "#000000";
-     }
+    if (spelplan.getContext) {
+	spelplankontext = spelplan.getContext("2d");
+	spelplankontext.fileStyle = "#000000";
+    }
 
     let vy=document.getElementById( "vy");
     vy.appendChild(spelplan);
 
-    nyckelpigan['U']=document.createElement("img");
-    nyckelpigan['U'].src="png/hraci1.png";
+    nyckelpigan[0]=document.createElement("img");
+    nyckelpigan[0].src="png/hraci1.png";
 
-    nyckelpigan['H']=document.createElement("img");
-    nyckelpigan['H'].src="png/hraci2.png";
+    nyckelpigan[1]=document.createElement("img");
+    nyckelpigan[1].src="png/hraci2.png";
 
-    nyckelpigan['N']=document.createElement("img");
-    nyckelpigan['N'].src="png/hraci3.png";
+    nyckelpigan[2]=document.createElement("img");
+    nyckelpigan[2].src="png/hraci3.png";
 
-    nyckelpigan['V']=document.createElement("img");
-    nyckelpigan['V'].src="png/hraci4.png";
+    nyckelpigan[3]=document.createElement("img");
+    nyckelpigan[3].src="png/hraci4.png";
 
     document.addEventListener( "keydown", tangenttryck, false);
 }
@@ -49,16 +50,16 @@ function tangenttryck(event) {
     }
 
     if(["ArrowUp"].indexOf(event.code) > -1) {
-	var riktning = 'U';
+	riktning = '0';
 	console.log("2 uppåt");
     } else if(["ArrowRight"].indexOf(event.code) > -1) {
-	var riktning = 'H';
+	riktning = '1';
 	console.log("2 höger");
     } else if(["ArrowDown"].indexOf(event.code) > -1) {
-	var riktning = 'N';
+	riktning = '2';
 	console.log("2 nedåt");
     } else if(["ArrowLeft"].indexOf(event.code) > -1) {
-	var riktning = 'V';
+	riktning = '3';
 	console.log("2 vänster");
     }
 
