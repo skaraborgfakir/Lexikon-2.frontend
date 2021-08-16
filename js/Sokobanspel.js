@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 18:48:06 stefan>
+// Time-stamp: <2021-08-16 18:48:52 stefan>
 //
 
 "use strict"
@@ -14,6 +14,7 @@ var nyckelpiganÅtVänster, nyckelpiganÅtHöger, nyckelpiganUppåt, nyckelpigan
 var lådor;
 var bakgrund;
 var vägg;
+
 //
 var riktning;
 
@@ -44,7 +45,7 @@ function init() {
 
     bakgrund=document.createElement("img");
     bakgrund="png/background2.png";
-    spelplan.background=bakgrund;
+    spelplan.style.background=bakgrund;
 
     vägg=document.createElement("img");
     vägg="png/wall_wood1.png";
