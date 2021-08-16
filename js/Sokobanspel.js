@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 17:20:12 stefan>
+// Time-stamp: <2021-08-16 17:25:22 stefan>
 //
 
 "use strict"
@@ -8,6 +8,7 @@ var bredd;
 var höjd;
 
 var nyckelpiganÅtVänster, nyckelpiganÅtHöger, nyckelpiganUppåt, nyckelpiganNedåt;
+var riktning = 'H';
 
 function init() {
     let spelplan=document.createElement( "canvas");
@@ -37,8 +38,13 @@ function init() {
     document.addEventListener( "keydown", tangenttryck, false);
 }
 
-document.addEventListener( "DOMContentLoaded", init, false);
+document.addEventListener( "DOMContentLoaded", init(e), false);
 
-function tangenttryck() {
+function tangenttryck(e) {
     console.log("keypress");
+
+    if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+	console.log("preventDefault");
+	e.preventDefault();
+    }
 }
