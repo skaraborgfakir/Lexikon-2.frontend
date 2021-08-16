@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 17:32:17 stefan>
+// Time-stamp: <2021-08-16 17:35:31 stefan>
 //
 
 "use strict"
@@ -48,13 +48,31 @@ function tangenttryck(event) {
 	event.preventDefault();
     }
 
+    select( indexOf(event.code) ) {
+	case "ArrowUp":
+	console.log("1 uppåt");
+	break;
+
+	case "ArrowRight":
+	console.log("1 höger");
+	break;
+
+	case "ArrowDown":
+	console.log("1 ned");
+	break;
+
+	case "ArrowRight":
+	console.log("1 vänster");
+	break;
+    }
+
     if(["ArrowUp"].indexOf(event.code) > -1) {
-	console.log("uppåt");
+	    console.log("2 uppåt");
     } else if(["ArrowRight"].indexOf(event.code) > -1) {
-	console.log("höger");
+	console.log("2 höger");
     } else if(["ArrowDown"].indexOf(event.code) > -1) {
-	console.log("nedåt");
+	console.log("2 nedåt");
     } else if(["ArrowLeft"].indexOf(event.code) > -1) {
-	console.log("vänster");
+	console.log("2 vänster");
     }
 }
