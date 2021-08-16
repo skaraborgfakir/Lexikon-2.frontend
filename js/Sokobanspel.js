@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 00:14:54 stefan>
+/* Time-stamp: <2021-08-17 00:15:30 stefan>
  */
 
 var spelplankontext;
@@ -72,9 +72,9 @@ function init() {
 document.addEventListener( "DOMContentLoaded", init, false);
 
 function paint() {
-    spelplankontext.drawImage( bakgrund,
-			       0, 0, tileMap01.width*20, tileMap01.height*20,
-			       0, 0, tileMap01.width*20, tileMap01.height*20);
+    // spelplankontext.drawImage( bakgrund,
+    //			       0, 0, tileMap01.width*20, tileMap01.height*20,
+    //			       0, 0, tileMap01.width*20, tileMap01.height*20);
 
 }
 
