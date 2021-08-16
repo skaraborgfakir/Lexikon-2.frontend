@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 20:03:00 stefan>
+// Time-stamp: <2021-08-16 20:05:38 stefan>
 //
 
 "use strict"
@@ -59,6 +59,7 @@ function init() {
 	    if ( tileMap01.mapGrid[x][y][0] === 'P') {
 		X=x;
 		Y=y;
+		console.log( "tileMap01.mapGrid[x][y][0]: "+ tileMap01.mapGrid[x][y][0]);
 	    }
 	}
     }
