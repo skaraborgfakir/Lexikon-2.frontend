@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 00:45:02 stefan>
+/* Time-stamp: <2021-08-17 00:56:07 stefan>
  */
 
 var spelplankontext;
@@ -12,6 +12,7 @@ var nyckelpiganÅtVänster, nyckelpiganÅtHöger, nyckelpiganUppåt, nyckelpigan
 var lådor;
 var bakgrund;
 var vägg; var väggInläst;
+var golv; var golvInläst;
 
 //
 var riktning;
@@ -43,6 +44,13 @@ function init() {
 
     bakgrund=document.createElement("img");
     bakgrund.src="png/background2.png";
+
+
+    golv=document.createElement("img");
+    golv.addEventListener('load', (event) => {
+	golvInläst=true;
+    });
+    golv.src="png/floor_gray1.png";
 
     vägg=document.createElement("img");
     vägg.addEventListener('load', (event) => {
@@ -102,7 +110,7 @@ function paint() {
 	break;
     }
 
-    if (väggInläst) {
+    if (väggInläst && golvInläst) {
 	for (var x=0; x < tileMap01.width ; x++) {
 	    for (var y=0; y < tileMap01.height ; y++) {
 		switch( tileMap01.mapGrid[y][x][0]) {
@@ -114,8 +122,12 @@ function paint() {
 		case 'B':
 		    spelplankontext.drawImage( lådor,
 					       0,           0, 40, 40,
-					       40*x+5, 40*y+5, 35, 35);
+					       40*x+5, 40*y+5, 30, 30);
 		    break;
+		case ' ':
+		    spelplankontext.drawImage( golv,
+					       0,       0, 40, 40,
+					       40*x, 40*y, 40, 40);
 		}
 	    }
 	}
