@@ -7,10 +7,11 @@ html {
 }
 
 body {
-    color: #808080;
+    color:            #808080;
     background-color: #5da449;
-    display: flex;
-    min-width: 800px;
+    display:          flex;
+    flex-direction:   column;
+    min-width:        800px;
 }
 
 #vy {
@@ -19,12 +20,4 @@ body {
 
 #spelplan {
     background-color: 101010;
-}
-
-#mur {
-    display: grid;
-}
-
-#bakgrund {
-    display: grid;
 }
