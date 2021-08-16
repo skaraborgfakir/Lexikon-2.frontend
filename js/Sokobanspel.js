@@ -1,7 +1,5 @@
-// Time-stamp: <2021-08-16 20:08:39 stefan>
+// Time-stamp: <2021-08-16 20:11:03 stefan>
 //
-
-"use strict"
 
 var spelplankontext;
 var bredd;
