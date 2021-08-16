@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 18:11:06 stefan>
+// Time-stamp: <2021-08-16 18:13:36 stefan>
 //
 
 "use strict"
@@ -37,8 +37,8 @@ function init() {
     document.addEventListener( "keydown", tangenttryck, false);
 
     riktning = 'U';
-    X = 30;
-    Y = 30;
+    X = 15;
+    Y = 15;
     spelplankontext.drawImage( nyckelpiganUppåt,
 			       0,       0, 20, 20,
 			       20*X, 20*Y, 20, 20);
