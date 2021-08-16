@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 20:06:17 stefan>
+// Time-stamp: <2021-08-16 20:08:39 stefan>
 //
 
 "use strict"
@@ -56,10 +56,10 @@ function init() {
     //
     for (var x=0; x < tileMap01.width ; x++) {
 	for (var y=0; y < tileMap01.height ; y++) {
-	    if ( tileMap01.mapGrid[x][y][0] === 'P') {
+	    if ( tileMap01.mapGrid[y][x][0] === 'P') {
 		X=x;
 		Y=y;
-		console.log( "tileMap01.mapGrid["+x+"]["+y+"][0]: "+ tileMap01.mapGrid[x][y][0]);
+		console.log( "tileMap01.mapGrid["+y+"]["+x+"][0]: "+ tileMap01.mapGrid[y][x][0]);
 	    }
 	}
     }
