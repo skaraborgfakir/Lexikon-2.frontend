@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 18:31:44 stefan>
+// Time-stamp: <2021-08-16 18:32:45 stefan>
 //
 
 "use strict"
@@ -41,7 +41,7 @@ function init() {
     //
     for (var x=0; x < tileMap01.width ; x++) {
 	for (var y=0; y < tileMap01.height ; y++) {
-	    if (tileMap01.mapGrid[x][y]=='P') {
+	    if (tileMap01.mapGrid[x][y][0]=='P') {
 		X=x;
 		Y=y;
 	    }
