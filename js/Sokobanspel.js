@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 17:28:47 stefan>
+// Time-stamp: <2021-08-16 17:30:07 stefan>
 //
 
 "use strict"
@@ -38,7 +38,7 @@ function init() {
     document.addEventListener( "keydown", tangenttryck, false);
 }
 
-document.addEventListener( "DOMContentLoaded", init(e), false);
+document.addEventListener( "DOMContentLoaded", init, false);
 
 function tangenttryck(event) {
     console.log("keypress");
