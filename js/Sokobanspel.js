@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 18:41:55 stefan>
+// Time-stamp: <2021-08-16 18:47:07 stefan>
 //
 
 "use strict"
@@ -34,6 +34,16 @@ function init() {
     nyckelpiganÅtVänster=document.createElement("img");
     nyckelpiganÅtVänster.src="png/hraci4.png";
 
+    lådor=document.createElement("img");
+    lådor.src="png/box_dark1.png";
+
+    bakgrund=document.createElement("img");
+    bakgrund="png/background2.png";
+    spelplan.background=bakgrund;
+
+    vägg=document.createElement("img");
+    vägg="png/wall_wood1.png";
+
     document.addEventListener( "keydown", tangenttryck, false);
 
     //
@@ -60,27 +70,22 @@ function tangenttryck(event) {
     if(["ArrowUp"].indexOf(event.code) > -1) {
 	event.preventDefault();
 	riktning = 'U';
-	console.log("2 uppåt");
 	flytta=true;
     } else if(["ArrowRight"].indexOf(event.code) > -1) {
 	event.preventDefault();
 	riktning = 'H';
-	console.log("2 höger");
 	flytta=true;
     } else if(["ArrowDown"].indexOf(event.code) > -1) {
 	event.preventDefault();
 	riktning = 'N';
-	console.log("2 nedåt");
 	flytta=true;
     } else if(["ArrowLeft"].indexOf(event.code) > -1) {
 	event.preventDefault();
 	riktning = 'V';
-	console.log("2 vänster");
 	flytta=true;
     }
 
     if(flytta) {
-	spelplankontext.clearRect( 30, 30, 20, 20);
 	switch(riktning) {
 	case 'U':
 	    if (Y > 0) {
