@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 00:38:54 stefan>
+/* Time-stamp: <2021-08-17 00:41:12 stefan>
  */
 
 var spelplankontext;
@@ -42,7 +42,7 @@ function init() {
     lådor.src="png/box_dark1.png";
 
     bakgrund=document.createElement("img");
-    bakgrund="png/background2.png";
+    bakgrund.src="png/background2.png";
 
     vägg=document.createElement("img");
     vägg.addEventListener('load', (event) => {
@@ -76,9 +76,8 @@ function init() {
 document.addEventListener( "DOMContentLoaded", init, false);
 
 function paint() {
-    // spelplankontext.drawImage( bakgrund,
-    //			       0, 0, tileMap01.width*20, tileMap01.height*20,
-    //			       0, 0, tileMap01.width*20, tileMap01.height*20);
+    spelplankontext.drawImage( bakgrund,
+			       0, 0, tileMap01.width*40, tileMap01.height*40);
 
     console.log("paint");
 
