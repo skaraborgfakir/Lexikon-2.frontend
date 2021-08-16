@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-16 20:16:44 stefan>
+/* Time-stamp: <2021-08-16 20:18:20 stefan>
  */
 
 var spelplankontext;
@@ -47,7 +47,8 @@ function init() {
     vägg=document.createElement("img");
     vägg="png/wall_wood1.png";
 
-    spelplankontext.drawImage( bakgrund, 0, 0, tileMap01.width*20, tileMap01.height*20);
+    spelplankontext.drawImage( bakgrund,
+			       0, 0, tileMap01.width*20, tileMap01.height*20);
 
     document.addEventListener( "keydown", tangenttryck, false);
 
