@@ -7,7 +7,7 @@ var Tiles = { Wall:  "tile-wall",
 	    };
 /*   Enum of CSS Classes for the moving elements   */
 var Entities = { Character: "entity-player",
-		 Block: "entity-block",
+		 Block:     "entity-block",
 		 BlockDone: "entity-block-goal",
 	       };
 /*  Legend

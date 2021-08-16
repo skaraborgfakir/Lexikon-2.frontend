@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 18:24:10 stefan>
+// Time-stamp: <2021-08-16 18:30:27 stefan>
 //
 
 "use strict"
@@ -36,12 +36,19 @@ function init() {
 
     document.addEventListener( "keydown", tangenttryck, false);
 
-    riktning = 'U';
-    X = 2;
-    Y = 2;
-    spelplankontext.drawImage( nyckelpiganUppåt,
-			       0,       0, 20, 20,
-			       20*X, 20*Y, 20, 20);
+    //
+    // sök reda på startpunkten i labyrinten
+    //
+    for (var x=0, x < tileMap01.width ; x++) {
+	for (var y=0, y < tileMap01.height ; y++) {
+	    if (tileMap01.mapGrid[x][y]=='P') {
+		X=x;
+		Y=y;
+	    }
+	}
+    }
+
+    console.log("X="+ X + ",Y="+ Y);
 }
 
 document.addEventListener( "DOMContentLoaded", init, false);
