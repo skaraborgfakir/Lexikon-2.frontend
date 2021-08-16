@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 18:47:07 stefan>
+// Time-stamp: <2021-08-16 18:48:06 stefan>
 //
 
 "use strict"
@@ -9,7 +9,12 @@ var höjd;
 var X;
 var Y;
 
+// png
 var nyckelpiganÅtVänster, nyckelpiganÅtHöger, nyckelpiganUppåt, nyckelpiganNedåt;
+var lådor;
+var bakgrund;
+var vägg;
+//
 var riktning;
 
 function init() {
