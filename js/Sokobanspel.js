@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 17:45:03 stefan>
+// Time-stamp: <2021-08-16 17:51:58 stefan>
 //
 
 "use strict"
@@ -8,8 +8,7 @@ var bredd;
 var höjd;
 
 var nyckelpiganÅtVänster, nyckelpiganÅtHöger, nyckelpiganUppåt, nyckelpiganNedåt;
-var nyckelpigan[4];
-var riktning = 0;
+var riktning = 'U';
 
 function init() {
     let spelplan=document.createElement( "canvas");
@@ -24,17 +23,14 @@ function init() {
     let vy=document.getElementById( "vy");
     vy.appendChild(spelplan);
 
-    nyckelpigan[0]=document.createElement("img");
-    nyckelpigan[0].src="png/hraci1.png";
-
-    nyckelpigan[1]=document.createElement("img");
-    nyckelpigan[1].src="png/hraci2.png";
-
-    nyckelpigan[2]=document.createElement("img");
-    nyckelpigan[2].src="png/hraci3.png";
-
-    nyckelpigan[3]=document.createElement("img");
-    nyckelpigan[3].src="png/hraci4.png";
+    nyckelpiganUppåt=document.createElement("img");
+    nyckelpiganUppåt.src="png/hraci1.png";
+    nyckelpiganÅtHöger=document.createElement("img");
+    nyckelpiganÅtHöger.src="png/hraci2.png";
+    nyckelpiganNedåt=document.createElement("img");
+    nyckelpiganNedåt.src="png/hraci3.png";
+    nyckelpiganÅtVänster=document.createElement("img");
+    nyckelpiganÅtVänster.src="png/hraci4.png";
 
     document.addEventListener( "keydown", tangenttryck, false);
 }
@@ -50,21 +46,40 @@ function tangenttryck(event) {
     }
 
     if(["ArrowUp"].indexOf(event.code) > -1) {
-	riktning = '0';
+	riktning = 'U';
 	console.log("2 uppåt");
     } else if(["ArrowRight"].indexOf(event.code) > -1) {
-	riktning = '1';
+	riktning = 'H';
 	console.log("2 höger");
     } else if(["ArrowDown"].indexOf(event.code) > -1) {
-	riktning = '2';
+	riktning = 'N';
 	console.log("2 nedåt");
     } else if(["ArrowLeft"].indexOf(event.code) > -1) {
-	riktning = '3';
+	riktning = 'V';
 	console.log("2 vänster");
     }
 
     spelplan.clearRect( x, y, 20, 20);
-    spelplan.drawImage( nyckelpiga[riktning],
-			0,   0, 20, 20,
-			30, 30, 20, 20);
+    switch(riktning) {
+	'U':
+	spelplan.drawImage( nyckelpiganUppåt,
+			    0,   0, 20, 20,
+			    30, 30, 20, 20);
+	break;
+	'H':
+	spelplan.drawImage( nyckelpiganÅtHöger,
+			    0,   0, 20, 20,
+			    30, 30, 20, 20);
+	break;
+	'N':
+	spelplan.drawImage( nyckelpiganNedåt,
+			    0,   0, 20, 20,
+			    30, 30, 20, 20);
+	break;
+	'V':
+	spelplan.drawImage( nyckelpiganÅtVänster,
+			    0,   0, 20, 20,
+			    30, 30, 20, 20);
+	break;
+    }
 }
