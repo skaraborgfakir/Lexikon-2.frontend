@@ -1,4 +1,4 @@
-// Time-stamp: <2021-08-16 18:30:27 stefan>
+// Time-stamp: <2021-08-16 18:31:44 stefan>
 //
 
 "use strict"
@@ -39,8 +39,8 @@ function init() {
     //
     // sök reda på startpunkten i labyrinten
     //
-    for (var x=0, x < tileMap01.width ; x++) {
-	for (var y=0, y < tileMap01.height ; y++) {
+    for (var x=0; x < tileMap01.width ; x++) {
+	for (var y=0; y < tileMap01.height ; y++) {
 	    if (tileMap01.mapGrid[x][y]=='P') {
 		X=x;
 		Y=y;
