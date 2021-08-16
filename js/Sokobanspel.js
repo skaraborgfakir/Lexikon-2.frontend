@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 00:56:07 stefan>
+/* Time-stamp: <2021-08-17 00:58:18 stefan>
  */
 
 var spelplankontext;
@@ -13,6 +13,7 @@ var lådor;
 var bakgrund;
 var vägg; var väggInläst;
 var golv; var golvInläst;
+var inutiLabyrint;
 
 //
 var riktning;
@@ -115,6 +116,11 @@ function paint() {
 	    for (var y=0; y < tileMap01.height ; y++) {
 		switch( tileMap01.mapGrid[y][x][0]) {
 		case 'W':
+		    if (inutiLabyrint) {
+			inutiLabyrint=false;
+		    } else {
+			inutiLabyrint=true;
+		    }
 		    spelplankontext.drawImage( vägg,
 					       23*40, 0,   40, 40,
 					       40*x, 40*y, 40, 40);
@@ -125,9 +131,11 @@ function paint() {
 					       40*x+5, 40*y+5, 30, 30);
 		    break;
 		case ' ':
-		    spelplankontext.drawImage( golv,
-					       0,       0, 40, 40,
-					       40*x, 40*y, 40, 40);
+		    if ( inutiLabyrint) {
+			spelplankontext.drawImage( golv,
+						   0,       0, 40, 40,
+						   40*x, 40*y, 40, 40);
+		    }
 		}
 	    }
 	}
