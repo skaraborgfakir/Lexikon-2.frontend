@@ -106,22 +106,22 @@ function paint() {
 	case 'U':
 	    spelplankontext.drawImage( nyckelpiganUppåt,
 				       0,   0, 20, 20,
-				       20*avatarX, 20*avatarY, 20, 20);
+				       40*avatarX+5, 40*avatarY+5, 30, 30);
 	    break;
 	case 'H':
 	    spelplankontext.drawImage( nyckelpiganÅtHöger,
 				       0,   0, 20, 20,
-				       20*avatarX, 20*avatarY, 20, 20);
+				       40*avatarX+5, 40*avatarY+5, 30, 30);
 	    break;
 	case 'N':
 	    spelplankontext.drawImage( nyckelpiganNedåt,
 				       0,   0, 20, 20,
-				       20*avatarX, 20*avatarY, 20, 20);
+				       40*avatarX+5, 40*avatarY+5, 30, 30);
 	    break;
 	case 'V':
 	    spelplankontext.drawImage( nyckelpiganÅtVänster,
 				       0,   0, 20, 20,
-				       20*avatarX, 20*avatarY, 20, 20);
+				       40*avatarX+5, 40*avatarY+5, 30, 30);
 	    break;
 	}
 
@@ -174,25 +174,25 @@ function tangenttryck(event) {
 	switch(riktning) {
 	case 'U':
 	    if (avatarY > 0) {
-		spelplankontext.clearRect( 20*avatarX, 20*avatarY, 20, 20);
+		spelplankontext.clearRect( 40*avatarX, 40*avatarY, 40, 40);
 		avatarY=avatarY-1;
 	    }
 	    break;
 	case 'H':
 	    if (avatarX < tileMap01.width - 1) {
-		spelplankontext.clearRect( 20*avatarX, 20*avatarY, 20, 20);
+		spelplankontext.clearRect( 40*avatarX, 40*avatarY, 40, 40);
 		avatarX=avatarX+1;
 	    }
 	    break;
 	case 'N':
 	    if ( avatarY < tileMap01.height-1) {
-		spelplankontext.clearRect( 20*avatarX, 20*avatarY, 20, 20);
+		spelplankontext.clearRect( 40*avatarX, 40*avatarY, 40, 40);
 		avatarY=avatarY+1;
 	    }
 	    break;
 	case 'V':
 	    if (avatarX > 0) {
-		spelplankontext.clearRect( 20*avatarX, 20*avatarY, 20, 20);
+		spelplankontext.clearRect( 40*avatarX, 40*avatarY, 40, 40);
 		avatarX=avatarX-1;
 	    }
 	    break;
