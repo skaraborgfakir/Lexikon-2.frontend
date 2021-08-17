@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 11:11:33 stefan>
+/* Time-stamp: <2021-08-17 11:37:22 stefan>
  */
 
 var bredd;
@@ -181,36 +181,60 @@ function tangenttryck(event) {
     if(flytta) {
 	switch(riktning) {
 	case 'U':
-	    if ( tileMap01.mapGrid[avatarY-1][avatarX][0]==' ') {
-		spelplankontext.clearRect( 40*avatarX, 40*avatarY, 40, 40);
-		avatarY=avatarY-1;
-	    } else if ( tileMap01.mapGrid[avatarY-1][avatarX][0]=='B' &&
-			tileMap01.mapGrid[avatarY-2][avatarX][0]==' ' ) {
-		tileMap01.mapGrid[avatarY-1-1][avatarX][0]=tileMap01.mapGrid[avatarY-1][avatarX][0]; // flytta på en låda
+	    if ( tileMap01.mapGrid[avatarY-2][avatarX][0]==' ' &&
+		 tileMap01.mapGrid[avatarY-1][avatarX][0]=='B') {
+		tileMap01.mapGrid[avatarY-2][avatarX][0]=tileMap01.mapGrid[avatarY-1][avatarX][0]; // flytta på en låda
 		tileMap01.mapGrid[avatarY-1][avatarX][0]=' ';
 
 		spelplankontext.clearRect( 40*avatarX, 40*(avatarY-1), 40, 40);  // rensa plats där lådan stod
 		spelplankontext.clearRect( 40*avatarX, 40*avatarY,     40, 40);
 		avatarY=avatarY-1;
-	    }
+	    } else if ( tileMap01.mapGrid[avatarY-1][avatarX][0]==' ') {
+		spelplankontext.clearRect( 40*avatarX, 40*avatarY, 40, 40);
+		avatarY=avatarY-1;
+	    };
 	    break;
 	case 'H':
-	    if (tileMap01.mapGrid[avatarY][avatarX+1][0]==' ') {
+	    if ( tileMap01.mapGrid[avatarY][avatarX+2][0]==' ' &&
+		 tileMap01.mapGrid[avatarY][avatarX+1][0]=='B') {
+		tileMap01.mapGrid[avatarY][avatarX+2][0]=tileMap01.mapGrid[avatarY][avatarX+1][0]; // flytta på en låda
+		tileMap01.mapGrid[avatarY][avatarX+1][0]=' ';
+
+		spelplankontext.clearRect( 40*(avatarX+1), 40*avatarY, 40, 40);  // rensa plats där lådan stod
+		spelplankontext.clearRect( 40*avatarX, 40*avatarY,     40, 40);
+		avatarX=avatarX+1;
+	    } else if (tileMap01.mapGrid[avatarY][avatarX+1][0]==' ') {
 		spelplankontext.clearRect( 40*avatarX, 40*avatarY, 40, 40);
 		avatarX=avatarX+1;
 	    }
 	    break;
 	case 'N':
-	    if ( tileMap01.mapGrid[avatarY+1][avatarX][0]==' ') {
+	    if ( tileMap01.mapGrid[avatarY+2][avatarX][0]==' ' &&
+		 tileMap01.mapGrid[avatarY+1][avatarX][0]=='B') {
+		tileMap01.mapGrid[avatarY+2][avatarX][0]=tileMap01.mapGrid[avatarY+1][avatarX][0]; // flytta på en låda
+		tileMap01.mapGrid[avatarY+1][avatarX][0]=' ';
+
+		spelplankontext.clearRect( 40*avatarX, 40*(avatarY+1), 40, 40);  // rensa plats där lådan stod
+		spelplankontext.clearRect( 40*avatarX, 40*avatarY,     40, 40);
+		avatarY=avatarY+1;
+	    } else if ( tileMap01.mapGrid[avatarY+1][avatarX][0]==' ') {
 		spelplankontext.clearRect( 40*avatarX, 40*avatarY, 40, 40);
 		avatarY=avatarY+1;
 	    }
 	    break;
 	case 'V':
-	    if (tileMap01.mapGrid[avatarY][avatarX-1][0]==' ') {
+	    if ( tileMap01.mapGrid[avatarY][avatarX-2][0]==' ' &&
+		 tileMap01.mapGrid[avatarY][avatarX-1][0]=='B') {
+		tileMap01.mapGrid[avatarY][avatarX-2][0]=tileMap01.mapGrid[avatarY][avatarX-1][0]; // flytta på en låda
+		tileMap01.mapGrid[avatarY][avatarX-1][0]=' ';
+
+		spelplankontext.clearRect( 40*(avatarX-1), 40*avatarY, 40, 40);  // rensa plats där lådan stod
+		spelplankontext.clearRect( 40*avatarX, 40*avatarY,     40, 40);
+		avatarX=avatarX-1;
+	    } else if (tileMap01.mapGrid[avatarY][avatarX-1][0]==' ') {
 		spelplankontext.clearRect( 40*avatarX, 40*avatarY, 40, 40);
 		avatarX=avatarX-1;
-	    }
+	    };
 	    break;
 	}
     }
