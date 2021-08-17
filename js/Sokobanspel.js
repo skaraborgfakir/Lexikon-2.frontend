@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 11:37:22 stefan>
+/* Time-stamp: <2021-08-17 11:40:42 stefan>
  */
 
 var bredd;
@@ -181,7 +181,8 @@ function tangenttryck(event) {
     if(flytta) {
 	switch(riktning) {
 	case 'U':
-	    if ( tileMap01.mapGrid[avatarY-2][avatarX][0]==' ' &&
+	    if ( ( tileMap01.mapGrid[avatarY-2][avatarX][0]==' ' ||
+		   tileMap01.mapGrid[avatarY-2][avatarX][0]=='G') &&
 		 tileMap01.mapGrid[avatarY-1][avatarX][0]=='B') {
 		tileMap01.mapGrid[avatarY-2][avatarX][0]=tileMap01.mapGrid[avatarY-1][avatarX][0]; // flytta på en låda
 		tileMap01.mapGrid[avatarY-1][avatarX][0]=' ';
@@ -195,7 +196,8 @@ function tangenttryck(event) {
 	    };
 	    break;
 	case 'H':
-	    if ( tileMap01.mapGrid[avatarY][avatarX+2][0]==' ' &&
+	    if ( ( tileMap01.mapGrid[avatarY][avatarX+2][0]=='G' ||
+		   tileMap01.mapGrid[avatarY][avatarX+2][0]==' ') &&
 		 tileMap01.mapGrid[avatarY][avatarX+1][0]=='B') {
 		tileMap01.mapGrid[avatarY][avatarX+2][0]=tileMap01.mapGrid[avatarY][avatarX+1][0]; // flytta på en låda
 		tileMap01.mapGrid[avatarY][avatarX+1][0]=' ';
@@ -209,7 +211,8 @@ function tangenttryck(event) {
 	    }
 	    break;
 	case 'N':
-	    if ( tileMap01.mapGrid[avatarY+2][avatarX][0]==' ' &&
+	    if ( ( tileMap01.mapGrid[avatarY+2][avatarX][0]=='G' ||
+		   tileMap01.mapGrid[avatarY+2][avatarX][0]==' ') &&
 		 tileMap01.mapGrid[avatarY+1][avatarX][0]=='B') {
 		tileMap01.mapGrid[avatarY+2][avatarX][0]=tileMap01.mapGrid[avatarY+1][avatarX][0]; // flytta på en låda
 		tileMap01.mapGrid[avatarY+1][avatarX][0]=' ';
@@ -223,7 +226,8 @@ function tangenttryck(event) {
 	    }
 	    break;
 	case 'V':
-	    if ( tileMap01.mapGrid[avatarY][avatarX-2][0]==' ' &&
+	    if ( ( tileMap01.mapGrid[avatarY][avatarX-2][0]=='G'||
+		   tileMap01.mapGrid[avatarY][avatarX-2][0]==' ') &&
 		 tileMap01.mapGrid[avatarY][avatarX-1][0]=='B') {
 		tileMap01.mapGrid[avatarY][avatarX-2][0]=tileMap01.mapGrid[avatarY][avatarX-1][0]; // flytta på en låda
 		tileMap01.mapGrid[avatarY][avatarX-1][0]=' ';
