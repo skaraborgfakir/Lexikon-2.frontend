@@ -1,19 +1,19 @@
-/* Time-stamp: <2021-08-17 01:00:36 stefan>
+/* Time-stamp: <2021-08-17 09:53:57 stefan>
  */
 
-var spelplankontext;
 var bredd;
 var höjd;
-var X;
-var Y;
+var spelplankontext;
+var avatarX; var avatarY;               // nyckelpigans positioner
+var lådorX[0]; var lådorY[0];           // tom matris för lådornas pos
+var målpunkterX[0]; var målpunkterY[0]; //
 
-// png
+// PNG
 var nyckelpiganÅtVänster, nyckelpiganÅtHöger, nyckelpiganUppåt, nyckelpiganNedåt;
 var lådor;
 var bakgrund;
 var vägg; var väggInläst;
 var golv; var golvInläst;
-var inutiLabyrint;
 
 //
 var riktning;
@@ -66,10 +66,24 @@ function init() {
     //
     for (var x=0; x < tileMap01.width ; x++) {
 	for (var y=0; y < tileMap01.height ; y++) {
-	    if ( tileMap01.mapGrid[y][x][0] === 'P') {
-		X=x;
-		Y=y;
+	    switch (tileMap01.mapGrid[y][x][0]) {
+	    case 'W':
+		break;
+	    case 'B':
+		lådorX.push(x);
+		lådorY.push(y);
+		console.log( "lådorY.length:"+lådorY.length);
+		break;
+	    case 'P':
+		avatarX=x;
+		avatarY=y;
 		console.log( "tileMap01.mapGrid["+y+"]["+x+"][0]: "+ tileMap01.mapGrid[y][x][0]);
+		break;
+	    case 'G':
+		målpunkterX.push(x);
+		målpunkterY.push(y);
+		console.log( "målpunkterY.length:"+målpunkterY.length);
+		break;
 	    }
 	}
     }
@@ -77,50 +91,45 @@ function init() {
     setInterval(paint,20);
     riktning='U';
 
-    // console.log("X="+ X + ",Y="+ Y);
+    // console.log("avatarX="+ avatarX + ",avatarY="+ avatarY);
 }
-
-
 
 document.addEventListener( "DOMContentLoaded", init, false);
 
 function paint() {
-    spelplankontext.drawImage( bakgrund,
-			       0, 0, tileMap01.width*40, tileMap01.height*40);
-
-    switch(riktning) {
-    case 'U':
-	spelplankontext.drawImage( nyckelpiganUppåt,
-				   0,   0, 20, 20,
-				   20*X, 20*Y, 20, 20);
-	break;
-    case 'H':
-	spelplankontext.drawImage( nyckelpiganÅtHöger,
-				   0,   0, 20, 20,
-				   20*X, 20*Y, 20, 20);
-	break;
-    case 'N':
-	spelplankontext.drawImage( nyckelpiganNedåt,
-				   0,   0, 20, 20,
-				   20*X, 20*Y, 20, 20);
-	break;
-    case 'V':
-	spelplankontext.drawImage( nyckelpiganÅtVänster,
-				   0,   0, 20, 20,
-				   20*X, 20*Y, 20, 20);
-	break;
-    }
-
     if (väggInläst && golvInläst) {
+
+	spelplankontext.drawImage( bakgrund,
+				   0, 0, tileMap01.width*40, tileMap01.height*40);
+
+	switch(riktning) {
+	case 'U':
+	    spelplankontext.drawImage( nyckelpiganUppåt,
+				       0,   0, 20, 20,
+				       20*avatarX, 20*avatarY, 20, 20);
+	    break;
+	case 'H':
+	    spelplankontext.drawImage( nyckelpiganÅtHöger,
+				       0,   0, 20, 20,
+				       20*avatarX, 20*avatarY, 20, 20);
+	    break;
+	case 'N':
+	    spelplankontext.drawImage( nyckelpiganNedåt,
+				       0,   0, 20, 20,
+				       20*avatarX, 20*avatarY, 20, 20);
+	    break;
+	case 'V':
+	    spelplankontext.drawImage( nyckelpiganÅtVänster,
+				       0,   0, 20, 20,
+				       20*avatarX, 20*avatarY, 20, 20);
+	    break;
+	}
+
+
 	for (var x=0; x < tileMap01.width ; x++) {
 	    for (var y=0; y < tileMap01.height ; y++) {
 		switch( tileMap01.mapGrid[y][x][0]) {
 		case 'W':
-		    if (inutiLabyrint) {
-			inutiLabyrint=false;
-		    } else {
-			inutiLabyrint=true;
-		    }
 		    spelplankontext.drawImage( vägg,
 					       23*40, 0,   40, 40,
 					       40*x, 40*y, 40, 40);
@@ -131,10 +140,7 @@ function paint() {
 					       40*x+5, 40*y+5, 30, 30);
 		    break;
 		case ' ':
-		    if ( inutiLabyrint) {
-			// spelplankontext.drawImage( golv,
-			//			   0,       0, 40, 40,
-			//			   40*x, 40*y, 40, 40);
+		    break;
 		    }
 		}
 	    }
@@ -167,27 +173,27 @@ function tangenttryck(event) {
     if(flytta) {
 	switch(riktning) {
 	case 'U':
-	    if (Y > 0) {
-		spelplankontext.clearRect( 20*X, 20*Y, 20, 20);
-		Y=Y-1;
+	    if (avatarY > 0) {
+		spelplankontext.clearRect( 20*avatarX, 20*avatarY, 20, 20);
+		avatarY=avatarY-1;
 	    }
 	    break;
 	case 'H':
-	    if (X < tileMap01.width - 1) {
-		spelplankontext.clearRect( 20*X, 20*Y, 20, 20);
-		X=X+1;
+	    if (avatarX < tileMap01.width - 1) {
+		spelplankontext.clearRect( 20*avatarX, 20*avatarY, 20, 20);
+		avatarX=avatarX+1;
 	    }
 	    break;
 	case 'N':
-	    if ( Y < tileMap01.height-1) {
-		spelplankontext.clearRect( 20*X, 20*Y, 20, 20);
-		Y=Y+1;
+	    if ( avatarY < tileMap01.height-1) {
+		spelplankontext.clearRect( 20*avatarX, 20*avatarY, 20, 20);
+		avatarY=avatarY+1;
 	    }
 	    break;
 	case 'V':
-	    if (X > 0) {
-		spelplankontext.clearRect( 20*X, 20*Y, 20, 20);
-		X=X-1;
+	    if (avatarX > 0) {
+		spelplankontext.clearRect( 20*avatarX, 20*avatarY, 20, 20);
+		avatarX=avatarX-1;
 	    }
 	    break;
 	}
