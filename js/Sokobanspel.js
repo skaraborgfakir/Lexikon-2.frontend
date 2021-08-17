@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 12:08:03 stefan>
+/* Time-stamp: <2021-08-17 13:17:12 stefan>
  */
 
 var bredd;
@@ -8,16 +8,15 @@ var avatarX; var avatarY;               // nyckelpigans positioner
 var antalLådor;
 var antalLådorIBo = 0;
 var lådor = new Array();
-var lådorX = new Array(); var lådorY=new Array();           // tom matris för lådornas pos
 var antalMålpunkter;
-var målpunkterX=new Array(); var målpunkterY=new Array(); //
+var målpunkter = new Array();
 
 // PNG
-var nyckelpiganÅtVänster, nyckelpiganÅtHöger, nyckelpiganUppåt, nyckelpiganNedåt;
+var nyckelpiganÅtVänster, nyckelpiganÅtHöger, nyckelpiganUppåt, nyckelpiganNedåt; // även denna är en sprite
 var lådorSprite;
 var bakgrund;
-var vägg; var väggInläst;
-var golv; var golvInläst;
+var väggSprite; var väggInläst;
+var golvSprite; var golvInläst;
 
 //
 var riktning;
@@ -50,17 +49,17 @@ function init() {
     bakgrund=document.createElement("img");
     bakgrund.src="png/background2.png";
 
-    golv=document.createElement("img");
-    golv.addEventListener('load', (event) => {
+    golvSprite=document.createElement("img");
+    golvSprite.addEventListener('load', (event) => {
 	golvInläst=true;
     });
-    golv.src="png/floor_gray1.png";
+    golvSprite.src="png/floor_gray1.png";
 
-    vägg=document.createElement("img");
-    vägg.addEventListener('load', (event) => {
+    väggSprite=document.createElement("img");
+    väggSprite.addEventListener('load', (event) => {
 	väggInläst=true;
     });
-    vägg.src="png/wall_wood1.png";
+    väggSprite.src="png/wall_wood1.png";
 
     document.addEventListener( "keydown", tangenttryck, false);
 
@@ -75,21 +74,14 @@ function init() {
 	    case 'B':
 		antalLådor=antalLådor+1;
 		lådor.push( { X: x, Y: y});
-		console.log( "{ X: x, Y: y}" + lådor[0].X);
-		lådorX.push(x);
-		lådorY.push(y);
-		console.log( "lådorY.length:"+lådorY.length);
 		break;
 	    case 'P':
 		avatarX=x;
 		avatarY=y;
-		console.log( "tileMap01.mapGrid["+y+"]["+x+"][0]: "+ tileMap01.mapGrid[y][x][0]);
 		break;
 	    case 'G':
 		antalMålpunkter=antalMålpunkter+1;
-		målpunkterX.push(x);
-		målpunkterY.push(y);
-		console.log( "målpunkterY.length:"+målpunkterY.length);
+		målpunkter.push( { X: x, Y: y});
 		break;
 	    }
 	}
@@ -112,7 +104,7 @@ function paint() {
 	    for (var y=0; y < tileMap01.height ; y++) {
 		switch( tileMap01.mapGrid[y][x][0]) {
 		case 'W':
-		    spelplankontext.drawImage( vägg,
+		    spelplankontext.drawImage( väggSprite,
 					       23*40, 0,   40, 40,
 					       40*x, 40*y, 40, 40);
 		    break;
@@ -160,28 +152,27 @@ function paint() {
 }
 
 function tangenttryck(event) {
-    var  flytta=false;
-    console.log("keypress");
+    let eventuelltFlytta=false;
 
     if(["ArrowUp"].indexOf(event.code) > -1) {
 	event.preventDefault();
 	riktning = 'U';
-	flytta=true;
+	eventuelltFlytta=true;
     } else if(["ArrowRight"].indexOf(event.code) > -1) {
 	event.preventDefault();
 	riktning = 'H';
-	flytta=true;
+	eventuelltFlytta=true;
     } else if(["ArrowDown"].indexOf(event.code) > -1) {
 	event.preventDefault();
 	riktning = 'N';
-	flytta=true;
+	eventuelltFlytta=true;
     } else if(["ArrowLeft"].indexOf(event.code) > -1) {
 	event.preventDefault();
 	riktning = 'V';
-	flytta=true;
+	eventuelltFlytta=true;
     }
 
-    if(flytta) {
+    if(eventuelltFlytta) {
 	switch(riktning) {
 	case 'U':
 	    if ( ( tileMap01.mapGrid[avatarY-2][avatarX][0]==' ' ||
