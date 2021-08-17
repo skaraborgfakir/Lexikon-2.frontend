@@ -1,11 +1,13 @@
-/* Time-stamp: <2021-08-17 09:53:57 stefan>
+/* Time-stamp: <2021-08-17 09:59:31 stefan>
  */
 
 var bredd;
 var höjd;
 var spelplankontext;
 var avatarX; var avatarY;               // nyckelpigans positioner
+var antalLådor;
 var lådorX[0]; var lådorY[0];           // tom matris för lådornas pos
+var antalMålpunkter;
 var målpunkterX[0]; var målpunkterY[0]; //
 
 // PNG
@@ -70,6 +72,7 @@ function init() {
 	    case 'W':
 		break;
 	    case 'B':
+		antalLådor=antalLådor+1;
 		lådorX.push(x);
 		lådorY.push(y);
 		console.log( "lådorY.length:"+lådorY.length);
@@ -80,6 +83,7 @@ function init() {
 		console.log( "tileMap01.mapGrid["+y+"]["+x+"][0]: "+ tileMap01.mapGrid[y][x][0]);
 		break;
 	    case 'G':
+		antalMålpunkter=antalMålpunkter+1;
 		målpunkterX.push(x);
 		målpunkterY.push(y);
 		console.log( "målpunkterY.length:"+målpunkterY.length);
@@ -138,6 +142,8 @@ function paint() {
 		    spelplankontext.drawImage( lådor,
 					       0,           0, 40, 40,
 					       40*x+5, 40*y+5, 30, 30);
+		    break;
+		case 'G':
 		    break;
 		case ' ':
 		    break;
