@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 10:01:04 stefan>
+/* Time-stamp: <2021-08-17 10:01:34 stefan>
  */
 
 var bredd;
@@ -147,7 +147,6 @@ function paint() {
 		    break;
 		case ' ':
 		    break;
-		    }
 		}
 	    }
 	}
