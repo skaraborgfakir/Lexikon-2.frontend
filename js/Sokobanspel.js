@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 10:03:45 stefan>
+/* Time-stamp: <2021-08-17 10:07:17 stefan>
  */
 
 var bredd;
@@ -6,9 +6,9 @@ var höjd;
 var spelplankontext;
 var avatarX; var avatarY;               // nyckelpigans positioner
 var antalLådor;
-const lådorX=[]; const lådorY=[];           // tom matris för lådornas pos
+var lådorX = new Array(); var lådorY=new Array();           // tom matris för lådornas pos
 var antalMålpunkter;
-var målpunkterX[]; var målpunkterY[]; //
+var målpunkterX=new Array(); var målpunkterY=new Array(); //
 
 // PNG
 var nyckelpiganÅtVänster, nyckelpiganÅtHöger, nyckelpiganUppåt, nyckelpiganNedåt;
