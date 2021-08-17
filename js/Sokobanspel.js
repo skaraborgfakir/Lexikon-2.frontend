@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 12:07:09 stefan>
+/* Time-stamp: <2021-08-17 12:08:03 stefan>
  */
 
 var bredd;
@@ -75,7 +75,7 @@ function init() {
 	    case 'B':
 		antalLådor=antalLådor+1;
 		lådor.push( { X: x, Y: y});
-		console.log( "{ X: x, Y: y}" + lådor[X]);
+		console.log( "{ X: x, Y: y}" + lådor[0].X);
 		lådorX.push(x);
 		lådorY.push(y);
 		console.log( "lådorY.length:"+lådorY.length);
