@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 10:47:04 stefan>
+/* Time-stamp: <2021-08-17 10:48:07 stefan>
  */
 
 var bredd;
@@ -122,7 +122,7 @@ function paint() {
 		    spelplankontext.beginPath();
 		    spelplankontext.arc(40*x+20, 40*y+20, 12, 0, 2 * Math.PI);
 		    spelplankontext.fillStyle("#991010");
-		    spelplankontext.stroke;()
+		    spelplankontext.stroke();
 		    break;
 		case ' ':
 		    break;
