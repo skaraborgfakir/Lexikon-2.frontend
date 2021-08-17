@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 10:53:38 stefan>
+/* Time-stamp: <2021-08-17 10:58:49 stefan>
  */
 
 var bredd;
@@ -181,25 +181,25 @@ function tangenttryck(event) {
     if(flytta) {
 	switch(riktning) {
 	case 'U':
-	    if (avatarY > 0) {
+	    if ( tileMap01[avatarX][avatarY-1][0]==' ') {
 		spelplankontext.clearRect( 40*avatarX, 40*avatarY, 40, 40);
 		avatarY=avatarY-1;
 	    }
 	    break;
 	case 'H':
-	    if (avatarX < tileMap01.width - 1) {
+	    if (tileMap01[avatarX+1][avatarY][0]==' ') {
 		spelplankontext.clearRect( 40*avatarX, 40*avatarY, 40, 40);
 		avatarX=avatarX+1;
 	    }
 	    break;
 	case 'N':
-	    if ( avatarY < tileMap01.height-1) {
+	    if ( tileMap01[avatarX][avatarY+1][0]==' ') {
 		spelplankontext.clearRect( 40*avatarX, 40*avatarY, 40, 40);
 		avatarY=avatarY+1;
 	    }
 	    break;
 	case 'V':
-	    if (avatarX > 0) {
+	    if (tileMap01[avatarX-1][avatarY][0]==' ') {
 		spelplankontext.clearRect( 40*avatarX, 40*avatarY, 40, 40);
 		avatarX=avatarX-1;
 	    }
