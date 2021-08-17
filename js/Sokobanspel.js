@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 11:40:42 stefan>
+/* Time-stamp: <2021-08-17 12:07:09 stefan>
  */
 
 var bredd;
@@ -6,13 +6,15 @@ var höjd;
 var spelplankontext;
 var avatarX; var avatarY;               // nyckelpigans positioner
 var antalLådor;
+var antalLådorIBo = 0;
+var lådor = new Array();
 var lådorX = new Array(); var lådorY=new Array();           // tom matris för lådornas pos
 var antalMålpunkter;
 var målpunkterX=new Array(); var målpunkterY=new Array(); //
 
 // PNG
 var nyckelpiganÅtVänster, nyckelpiganÅtHöger, nyckelpiganUppåt, nyckelpiganNedåt;
-var lådor;
+var lådorSprite;
 var bakgrund;
 var vägg; var väggInläst;
 var golv; var golvInläst;
@@ -42,12 +44,11 @@ function init() {
     nyckelpiganÅtVänster=document.createElement("img");
     nyckelpiganÅtVänster.src="png/hraci4.png";
 
-    lådor=document.createElement("img");
-    lådor.src="png/box_dark1.png";
+    lådorSprite=document.createElement("img");
+    lådorSprite.src="png/box_dark1.png";
 
     bakgrund=document.createElement("img");
     bakgrund.src="png/background2.png";
-
 
     golv=document.createElement("img");
     golv.addEventListener('load', (event) => {
@@ -64,7 +65,7 @@ function init() {
     document.addEventListener( "keydown", tangenttryck, false);
 
     //
-    // sök reda på startpunkten i labyrinten
+    // sök reda på olika punkter i labyrinten
     //
     for (var x=0; x < tileMap01.width ; x++) {
 	for (var y=0; y < tileMap01.height ; y++) {
@@ -73,6 +74,8 @@ function init() {
 		break;
 	    case 'B':
 		antalLådor=antalLådor+1;
+		lådor.push( { X: x, Y: y});
+		console.log( "{ X: x, Y: y}" + lådor[X]);
 		lådorX.push(x);
 		lådorY.push(y);
 		console.log( "lådorY.length:"+lådorY.length);
@@ -114,7 +117,7 @@ function paint() {
 					       40*x, 40*y, 40, 40);
 		    break;
 		case 'B':
-		    spelplankontext.drawImage( lådor,
+		    spelplankontext.drawImage( lådorSprite,
 					       0,           0, 40, 40,
 					       40*x+5, 40*y+5, 30, 30);
 		    break;
