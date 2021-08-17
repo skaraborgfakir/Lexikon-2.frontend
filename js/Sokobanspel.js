@@ -1,4 +1,4 @@
-/* Time-stamp: <2021-08-17 10:07:17 stefan>
+/* Time-stamp: <2021-08-17 10:47:04 stefan>
  */
 
 var bredd;
@@ -102,9 +102,33 @@ document.addEventListener( "DOMContentLoaded", init, false);
 
 function paint() {
     if (väggInläst && golvInläst) {
-
 	spelplankontext.drawImage( bakgrund,
 				   0, 0, tileMap01.width*40, tileMap01.height*40);
+
+	for (var x=0; x < tileMap01.width ; x++) {
+	    for (var y=0; y < tileMap01.height ; y++) {
+		switch( tileMap01.mapGrid[y][x][0]) {
+		case 'W':
+		    spelplankontext.drawImage( vägg,
+					       23*40, 0,   40, 40,
+					       40*x, 40*y, 40, 40);
+		    break;
+		case 'B':
+		    spelplankontext.drawImage( lådor,
+					       0,           0, 40, 40,
+					       40*x+5, 40*y+5, 30, 30);
+		    break;
+		case 'G':
+		    spelplankontext.beginPath();
+		    spelplankontext.arc(40*x+20, 40*y+20, 12, 0, 2 * Math.PI);
+		    spelplankontext.fillStyle("#991010");
+		    spelplankontext.stroke;()
+		    break;
+		case ' ':
+		    break;
+		}
+	    }
+	}
 
 	switch(riktning) {
 	case 'U':
@@ -127,28 +151,6 @@ function paint() {
 				       0,   0, 20, 20,
 				       40*avatarX+5, 40*avatarY+5, 30, 30);
 	    break;
-	}
-
-
-	for (var x=0; x < tileMap01.width ; x++) {
-	    for (var y=0; y < tileMap01.height ; y++) {
-		switch( tileMap01.mapGrid[y][x][0]) {
-		case 'W':
-		    spelplankontext.drawImage( vägg,
-					       23*40, 0,   40, 40,
-					       40*x, 40*y, 40, 40);
-		    break;
-		case 'B':
-		    spelplankontext.drawImage( lådor,
-					       0,           0, 40, 40,
-					       40*x+5, 40*y+5, 30, 30);
-		    break;
-		case 'G':
-		    break;
-		case ' ':
-		    break;
-		}
-	    }
 	}
     }
 }
